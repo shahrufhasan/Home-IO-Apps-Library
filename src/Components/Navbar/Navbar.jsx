@@ -48,29 +48,26 @@ const Navbar = () => {
             tabIndex={-1}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <NavLink to="/">
-              <a
-                className={navLinkClasses("/")}
-                onClick={() => handleClick("/")}
-              >
-                Home
-              </a>
+            <NavLink
+              to="/"
+              className={navLinkClasses("/")}
+              onClick={() => handleClick("/")}
+            >
+              Home
             </NavLink>
-            <NavLink to="/apps">
-              <a
-                className={navLinkClasses("/apps")}
-                onClick={() => handleClick("/apps")}
-              >
-                App
-              </a>
+            <NavLink
+              to="/apps"
+              className={navLinkClasses("/apps")}
+              onClick={() => handleClick("/apps")}
+            >
+              App
             </NavLink>
-            <NavLink to="/installedApp">
-              <a
-                className={navLinkClasses("/installedApp")}
-                onClick={() => handleClick("/installedApp")}
-              >
-                Installation
-              </a>
+            <NavLink
+              to="/installedApp"
+              className={navLinkClasses("/installedApp")}
+              onClick={() => handleClick("/installedApp")}
+            >
+              Installation
             </NavLink>
           </ul>
         </div>
@@ -90,28 +87,26 @@ const Navbar = () => {
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <NavLink to="/">
-            <a className={navLinkClasses("/")} onClick={() => handleClick("/")}>
-              <IoMdHome />
-              Home
-            </a>
+          <NavLink
+            to="/"
+            className={navLinkClasses("/")}
+            onClick={() => handleClick("/")}
+          >
+            Home
           </NavLink>
-          <NavLink to="/apps">
-            <a
-              className={navLinkClasses("/apps")}
-              onClick={() => handleClick("/apps")}
-            >
-              <FaAppStore />
-              App
-            </a>
+          <NavLink
+            to="/apps"
+            className={navLinkClasses("/apps")}
+            onClick={() => handleClick("/apps")}
+          >
+            App
           </NavLink>
-          <NavLink to="/installedApp">
-            <a
-              className={navLinkClasses("/installedApp")}
-              onClick={() => handleClick("/installedApp")}
-            >
-              Installation
-            </a>
+          <NavLink
+            to="/installedApp"
+            className={navLinkClasses("/installedApp")}
+            onClick={() => handleClick("/installedApp")}
+          >
+            Installation
           </NavLink>
         </ul>
       </div>
