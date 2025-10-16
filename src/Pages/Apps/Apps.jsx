@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useApps from "../../Hooks/useAppData";
 import AppCard from "../../Components/AppCard/AppCard";
 import NoAppFound from "../NoAppFound/NoAppFound";
+import { NavLink } from "react-router";
 
 const Apps = () => {
   const { apps } = useApps();
@@ -23,7 +24,7 @@ const Apps = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:gap-[650px] my-8">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:gap-[640px] my-8">
           <h4 className="text-lg font-semibold min-h-[40px] flex items-center">
             ({searchedApps.length}) Apps Found
           </h4>
@@ -45,8 +46,19 @@ const Apps = () => {
             ))}
           </div>
         ) : (
-          <div>
-            <NoAppFound></NoAppFound>
+          <div className="flex flex-col items-center">
+            <div>
+              <NoAppFound></NoAppFound>
+            </div>
+            <div>
+              <NavLink
+                to="/apps"
+                className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2]
+               text-white"
+              >
+                See All Apps
+              </NavLink>
+            </div>
           </div>
         )}
       </div>

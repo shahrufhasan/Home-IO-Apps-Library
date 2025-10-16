@@ -12,8 +12,8 @@ const Home = () => {
   const featureApps = apps.slice(0, 8);
 
   return (
-    <div className="overflow-x-hidden">
-      <div className="text-center flex flex-col mb-32 px-4">
+    <div>
+      <div className="text-center flex flex-col  px-4">
         <h1 className="text-5xl font-bold mb-6">
           We Build <br />
           <span className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
@@ -28,13 +28,21 @@ const Home = () => {
         </p>
 
         <div className="flex justify-center gap-4 mb-10 flex-wrap">
-          <button className="btn flex items-center gap-2">
+          <a
+            href="https://play.google.com/store/apps?hl=en_US"
+            target="_blank"
+            className="btn flex items-center gap-2"
+          >
             <img src={GooglePlayImg} className="w-6" alt="Google Play" /> Google
             Play
-          </button>
-          <button className="btn flex items-center gap-2">
+          </a>
+          <a
+            href="https://www.apple.com/app-store/"
+            target="_blank"
+            className="btn flex items-center gap-2"
+          >
             <img src={AppStoreImg} className="w-6" alt="App Store" /> App Store
-          </button>
+          </a>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -42,8 +50,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center space-y-8">
+      <div
+        className=" w-screen relative left-1/2 right-1/2 -mx-[50vw] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white py-20
+      "
+      >
+        <div className="mx-auto px-4 text-center space-y-8">
           <h2 className="text-5xl font-bold">
             Trusted By Millions, Built For You
           </h2>
