@@ -8,7 +8,7 @@ const AppCard = ({ app }) => {
     Math.floor(downloads / 1_000_000) + "M";
 
   return (
-    <div className="card p-4 shadow-md hover:scale-105 transition ease-in-out">
+    <div className="card p-4 shadow-md hover:scale-105 w-68 transition ease-in-out">
       <figure className="p-4 bg-gray-100">
         <img src={image} className="w-40" alt="Shoes" />
       </figure>
