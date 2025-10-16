@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useApps from "../../Hooks/useAppData";
 import AppCard from "../../Components/AppCard/AppCard";
 import NoAppFound from "../NoAppFound/NoAppFound";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Apps = () => {
   const { apps } = useApps();
@@ -51,13 +51,12 @@ const Apps = () => {
               <NoAppFound></NoAppFound>
             </div>
             <div>
-              <NavLink
-                to="/apps"
-                className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2]
-               text-white"
+              <Link
+                to="/"
+                className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white"
               >
-                See All Apps
-              </NavLink>
+                Go Back
+              </Link>
             </div>
           </div>
         )}

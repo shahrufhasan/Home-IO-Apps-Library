@@ -12,7 +12,6 @@ const AppDetails = () => {
   const { apps } = useApps();
   const app = apps?.find((a) => a.id === Number(id));
 
- 
   const installedApps = JSON.parse(localStorage.getItem("installedApp")) || [];
   const [installed, setInstalled] = useState(
     installedApps.some((a) => a.id === Number(id))
@@ -53,7 +52,7 @@ const AppDetails = () => {
     <div>
       <div className="flex flex-col lg:flex-row items-center gap-12">
         <div className="p-4 rounded-md">
-          <img src={image} alt={title} />
+          <img src={image} alt="" />
         </div>
 
         <div className="w-full">
@@ -62,9 +61,9 @@ const AppDetails = () => {
             Developed by:{" "}
             <span className="text-purple-600 font-semibold">{companyName}</span>
           </p>
-          <div className="border-b-2 border-purple-600"></div>
+          <div className="border-b-1 border-gray-300"></div>
 
-          <div className="grid grid-cols-3 gap-4 mt-10">
+          <div className="grid grid-cols-3 gap-4 mt-10 md:-ml-22">
             <div className="space-y-3 flex flex-col items-center">
               <img src={downloadImg} alt="" />
               <p className="text-gray-500 font-thin">Downloads</p>
@@ -84,7 +83,6 @@ const AppDetails = () => {
             </div>
           </div>
 
-          {/* Install button */}
           <button
             onClick={handleInstall}
             className={`btn mt-6 text-white ${
@@ -97,14 +95,19 @@ const AppDetails = () => {
         </div>
       </div>
 
-      <div>
+      <div className="border-t-1 border-gray-300">
         <br />
         <h4>Description</h4>
         <br />
         {description}
+        <br />
+        <br />
+        {description}
+        <br />
+        <br />
+        {description}
       </div>
 
-      {/* Toast container */}
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );

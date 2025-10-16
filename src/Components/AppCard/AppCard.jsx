@@ -30,7 +30,7 @@ const AppCard = ({ app }) => {
         </div>
       </div>
     </Link>
-  );    
+  );
 };
 
 export default AppCard;

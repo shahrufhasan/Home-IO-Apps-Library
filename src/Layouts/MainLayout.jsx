@@ -7,11 +7,13 @@ const MainLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar></Navbar>
-      <div
-        className="bg-gray-100 max-w-screen-xl px-4 md:px-8 lg:px-12
+      <div className="bg-gray-100 min-h-screen">
+        <div
+          className="max-w-screen-xl px-4 md:px-8 lg:px-12
         py-4 md:py-8 lg:py-12  mx-auto flex-1"
-      >
-        <Outlet></Outlet>
+        >
+          <Outlet></Outlet>
+        </div>
       </div>
       <Footer></Footer>
     </div>
