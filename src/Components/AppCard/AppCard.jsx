@@ -11,7 +11,7 @@ const AppCard = ({ app }) => {
   return (
     <Link
       to={`/apps/${id}`}
-      className="card p-4 shadow-md hover:scale-105 w-68 transition ease-in-out"
+      className="bg-white card p-2 shadow-md hover:scale-105 w-65 transition ease-in-out"
     >
       <figure className="p-4 bg-gray-100">
         <img src={image} className="w-40" alt="Shoes" />
@@ -30,7 +30,7 @@ const AppCard = ({ app }) => {
         </div>
       </div>
     </Link>
-  );
+  );    
 };
 
 export default AppCard;
