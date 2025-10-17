@@ -1,7 +1,7 @@
 # This is HomeIO App
 ### You can download and install apps from here directly
 
-# One plate form for all you needed apps
+# One platform for all your needed apps
 
 # Technology used to make this app
 ### 1. React
