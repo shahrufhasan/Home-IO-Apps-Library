@@ -6,6 +6,16 @@ import useApps from "../../Hooks/useAppData";
 import downloadImg from "../../../public/icon-downloads.png";
 import ratingImg from "../../../public/icon-ratings.png";
 import reviewImg from "../../../public/icon-review.png";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -47,11 +57,14 @@ const AppDetails = () => {
       toast.info("App is already installed");
     }
   };
+  const ratingData = [...app.ratings]
+    .sort((a, b) => b.name[0] - a.name[0])
+    .map((r) => ({ category: r.name, total: r.count }));
 
   return (
     <div>
       <div className="flex flex-col lg:flex-row items-center gap-12">
-        <div className="p-4 rounded-md">
+        <div className="p-4 rounded-md bg-white">
           <img src={image} alt="" />
         </div>
 
@@ -95,7 +108,22 @@ const AppDetails = () => {
         </div>
       </div>
 
-      <div className="border-t-1 border-gray-300">
+      <div className="my-8 border-t-1 border-gray-300">
+        <h4 className="mt-8">Rating</h4>
+        <div className="h-80">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart layout="vertical" data={ratingData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" />
+              <YAxis dataKey="category" type="category" /> <Tooltip />
+              <Legend />
+              <Bar dataKey="total" fill="#FF8811" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      <div className="border-t-1 border-gray-300 mt-10">
         <br />
         <h4>Description</h4>
         <br />
