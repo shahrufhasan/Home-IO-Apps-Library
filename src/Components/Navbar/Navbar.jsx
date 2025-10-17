@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import logo from "../../../public/logo.png";
 import { IoLogoGithub } from "react-icons/io5";
 import { Link, NavLink, useNavigate } from "react-router";
+import { IoMdHome } from "react-icons/io";
+import { FaAppStore } from "react-icons/fa";
+import { MdInstallMobile } from "react-icons/md";
 
 const Navbar = () => {
   const [activePath, setActivePath] = useState("/");
@@ -102,6 +105,7 @@ const Navbar = () => {
               className={navLinkClasses("/")}
               onClick={(e) => handleClick("/", e)}
             >
+              <IoMdHome />
               Home
             </NavLink>
             <NavLink
@@ -109,6 +113,7 @@ const Navbar = () => {
               className={navLinkClasses("/apps")}
               onClick={(e) => handleClick("/apps", e)}
             >
+              <FaAppStore />
               App
             </NavLink>
             <NavLink
@@ -116,6 +121,7 @@ const Navbar = () => {
               className={navLinkClasses("/installedApp")}
               onClick={(e) => handleClick("/installedApp", e)}
             >
+              <MdInstallMobile />
               Installation
             </NavLink>
           </ul>
