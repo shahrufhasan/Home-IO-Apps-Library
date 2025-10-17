@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useApps from "../../Hooks/useAppData";
 import AppCard from "../../Components/AppCard/AppCard";
 import NoAppFound from "../NoAppFound/NoAppFound";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 
 const Apps = () => {
   const { apps } = useApps();
   const [search, setSearch] = useState("");
+  const [searchedApps, setSearchedApps] = useState(apps);
+  const [loading, setLoading] = useState(false);
 
-  const term = search.trim().toLowerCase();
-  const searchedApps = term
-    ? apps.filter((app) => app.companyName.toLowerCase().includes(term))
-    : apps;
+  useEffect(() => {
+    setLoading(true);
+
+    const delayDebounce = setTimeout(() => {
+      const term = search.trim().toLowerCase();
+      const filtered = term
+        ? apps.filter((app) => app.companyName.toLowerCase().includes(term))
+        : apps;
+
+      setSearchedApps(filtered);
+      setLoading(false);
+    }, 400);
+
+    return () => clearTimeout(delayDebounce);
+  }, [search, apps]);
 
   return (
     <div className="overflow-x-hidden">
@@ -39,7 +52,11 @@ const Apps = () => {
           </label>
         </div>
 
-        {searchedApps.length > 0 ? (
+        {loading ? (
+          <div className="flex justify-center items-center py-12">
+            <span className="loading loading-spinner loading-lg text-purple-600"></span>
+          </div>
+        ) : searchedApps.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 justify-items-center">
             {searchedApps.map((app) => (
               <AppCard key={app.id} app={app} />
@@ -48,7 +65,7 @@ const Apps = () => {
         ) : (
           <div className="flex flex-col items-center">
             <div>
-              <NoAppFound></NoAppFound>
+              <NoAppFound />
             </div>
             <div>
               <Link
