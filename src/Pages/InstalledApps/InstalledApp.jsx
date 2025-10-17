@@ -63,7 +63,7 @@ const InstalledApp = () => {
       </div>
       <div className="space-y-3">
         {sortedApps.map((app) => (
-          <div className="bg-white p-2 card card-side  shadow-md flex items-center">
+          <div className="bg-white py-2 px-3 card card-side  shadow-md flex items-center">
             <figure className="bg-gray-100">
               <img src={app.image} className="h-25 p-4" />
             </figure>

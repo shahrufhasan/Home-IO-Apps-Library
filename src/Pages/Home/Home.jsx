@@ -7,7 +7,7 @@ import AppStoreImg from "../../../public/appstore.png";
 import useApps from "../../Hooks/useAppData";
 
 const Home = () => {
-  const { apps, loading, error } = useApps();
+  const { apps } = useApps();
 
   const featureApps = apps.slice(0, 8);
 
