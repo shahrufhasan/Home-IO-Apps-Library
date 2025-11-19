@@ -12,9 +12,8 @@ It allows users to explore and interact with various home automation solutions i
 ---
 
 ## 🛠️ Main Technologies Used
-- **Frontend:** React, JavaScript, HTML5, CSS3  
-- **Backend:** Node.js, Express *(if applicable)*  
-- **Database:** MongoDB *(if applicable)*  
+- **Frontend:** React, JavaScript, HTML5, Tailwind and Daisy UI 
+- **Database:** Used json data file inside the folder
 - **Hosting / Deployment:** Netlify  
 
 ---
